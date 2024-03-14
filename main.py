@@ -28,7 +28,7 @@ async def sub_callback(call: CallbackQuery, bot: Bot, message: Message):
     user_status2 = await bot.get_chat_member(chat_id=-1002081019692, user_id=call.from_user.id)
     user_status3 = await bot.get_chat_member(chat_id=-1001222394434, user_id=call.from_user.id)
     await message.answer("Siz obuna bo'lsangizgina bu botdan foydalana olasiz!")
-    if user_status1.status != "left" or user_status2.status != "left" or user_status3 != "left":
+    if user_status1.status != "left" and user_status2.status != "left" and user_status3 != "left":
         await bot.send_message(call.from_user.id, "Tabriklayman, siz royxatdan o'ta olasiz.")
     else:
         await bot.send_message(call.from_user.id, "Uzur, siz obuna bo'lmagansiz", reply_markup=check)
